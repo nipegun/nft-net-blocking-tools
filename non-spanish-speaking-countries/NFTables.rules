@@ -452,13 +452,13 @@ define CountriesToBlock = { CN, RU, UA, VN }
 
 table netdev filter {
 
-  set country-ipv4-blacklist {
+  set non-spanish-speaking-countries-ipv4 {
     type ipv4_addr
     flags interval
     elements = { $CN.ipv4, $RU.ipv4, $UA.ipv4, $VN.ipv4 }
   }
 
-  set country-ipv6-blacklist {
+  set non-spanish-speaking-countries-ipv6 {
     type ipv6_addr
     flags interval
     elements = { $CN.ipv6, $RU.ipv6, $UA.ipv6, $VN.ipv6 }
@@ -466,8 +466,8 @@ table netdev filter {
   
   chain ingress {
     type filter hook ingress device eth0 priority 0; policy accept;
-    ip saddr @country-ipv4-blacklist counter drop
-    ip6 saddr @country-ipv6-blacklist counter drop
+     ip saddr @non-spanish-speaking-countries-ipv4 counter drop
+    ip6 saddr @non-spanish-speaking-countries-ipv6 counter drop
   }
 
 }
