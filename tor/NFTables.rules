@@ -1,0 +1,25 @@
+include "/root/scripts/net-blocking-tools/tor/IPv4.nftables"
+#include "/root/scripts/net-blocking-tools/tor/IPv6.nftables"
+
+table netdev filter {
+
+  set tor-nodes-ipv4 {
+    type ipv4_addr
+    flags interval
+    elements = { $TORNodes.ipv4 }
+  }
+
+ # set tor-nodes-ipv6 {
+ #   type ipv6_addr
+ #   flags interval
+ #   elements = { $TORNodes.ipv6 }
+ # }
+  
+  chain ingress {
+    type filter hook ingress device eth0 priority 0; policy accept;
+     ip saddr @tor-nodes-ipv4 counter drop
+  #  ip6 saddr @tor-nodes-ipv6 counter drop
+  }
+
+}
+
