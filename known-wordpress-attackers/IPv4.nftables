@@ -1,3 +1,2 @@
 define wp-attackers.ipv4 = {
-5.62.60.4/30,
 }
