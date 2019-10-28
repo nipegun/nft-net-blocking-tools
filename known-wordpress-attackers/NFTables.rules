@@ -9,16 +9,16 @@ table netdev filter {
     elements = { $KnownWordpressAttackers.ipv4 }
   }
 
-  set known-wordpress-attackers-ipv6-blacklist {
-    type ipv6_addr
-    flags interval
-    elements = { $KnownWordpressAttackers.ipv6 }
-  }
+#  set known-wordpress-attackers-ipv6-blacklist {
+#    type ipv6_addr
+#    flags interval
+#    elements = { $KnownWordpressAttackers.ipv6 }
+#  }
   
   chain ingress {
     type filter hook ingress device eth0 priority 0; policy accept;
      ip saddr @known-wordpress-attackers-ipv4-blacklist counter drop
-    ip6 saddr @known-wordpress-attackers-ipv6-blacklist counter drop
+ #   ip6 saddr @known-wordpress-attackers-ipv6-blacklist counter drop
   }
 
 }
