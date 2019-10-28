@@ -1,2 +1,2 @@
-define wp-attackers.ipv4 = {
+define KnownWordpressAttackers.ipv4 = {
 }
