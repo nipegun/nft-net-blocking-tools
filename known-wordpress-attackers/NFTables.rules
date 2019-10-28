@@ -6,13 +6,13 @@ table netdev filter {
   set known-wordpress-attackers-ipv4-blacklist {
     type ipv4_addr
     flags interval
-    elements = { $knownwordpressattackers.ipv4 }
+    elements = { $KnownWordpressAttackers.ipv4 }
   }
 
   set known-wordpress-attackers-ipv6-blacklist {
     type ipv6_addr
     flags interval
-    elements = { $knownwordpressattackers.ipv6 }
+    elements = { $KnownWordpressAttackers.ipv6 }
   }
   
   chain ingress {
