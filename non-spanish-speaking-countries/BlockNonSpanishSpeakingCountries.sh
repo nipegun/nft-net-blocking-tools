@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install NFTables, in case is not installed
-apt-get -y install nftables
+apt-get -y install nftables > /dev/null
 
 # Delete previous blocks, if exists
 /root/scripts/net-blocking-tools/non-spanish-speaking-countries/UnblockNonSpanishSpeakingCountries.sh
