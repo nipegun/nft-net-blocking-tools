@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install NFTables, in case is not installed
-apt-get -y install nftables
+apt-get -y install nftables > /dev/null
 
 # Move the IPv4 IPs list to a NFTables rules file
 while read IP
