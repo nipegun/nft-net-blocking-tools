@@ -1,0 +1,26 @@
+include "/root/scripts/net-blocking-tools/known-wordpress-attackers/IPv4.nftables"
+include "/root/scripts/net-blocking-tools/known-wordpress-attackers/IPv6.nftables"
+
+#define CountriesToBlock = { CN, RU, UA, VN }
+
+table netdev filter {
+
+  set known-wordpress-attackers-ipv4-blacklist {
+    type ipv4_addr
+    flags interval
+    elements = { $wp-attackers.ipv4 }
+  }
+
+  set known-wordpress-attackers-ipv6-blacklist {
+    type ipv6_addr
+    flags interval
+    elements = { $wp-attackers.ipv6 }
+  }
+  
+  chain ingress {
+    type filter hook ingress device eth0 priority 0; policy accept;
+     ip saddr @known-wordpress-attackers-ipv4-blacklist counter drop
+    ip6 saddr @known-wordpress-attackers-ipv6-blacklist counter drop
+  }
+
+}
