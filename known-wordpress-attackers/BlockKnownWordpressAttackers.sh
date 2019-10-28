@@ -5,12 +5,12 @@ apt-get -y install nftables
 
 # Move the IPv4 IPs list to a NFTables rules file
 while read IP; do
-  sed -i '/^define wp-attackers.ipv4 = {/a $IP, /etc/nftables.conf
+  sed -i '/^define KnownWordpressAttackers.ipv4 = {/a $IP,' /etc/nftables.conf
 done </root/scripts/net-blocking-tools/known-wordpress-attackers/IPv4.list
 
 # Move the IPv6 IPs list to a NFTables rules file
 while read IP; do
-  sed -i '/^define wp-attackers.ipv4 = {/a $IP' /etc/nftables.conf
+  sed -i '/^define KnownWordpressAttackers.ipv6 = {/a $IP,' /etc/nftables.conf
 done </root/scripts/net-blocking-tools/known-wordpress-attackers/IPv6.list
 
 # BackUp NFTables original configuration file
