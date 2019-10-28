@@ -27,10 +27,12 @@ wget -q --tries=10 --timeout=20 --spider https://github.com
     rm /root/scripts/net-blocking-tools/.git -R
     rm /root/scripts/net-blocking-tools/README.md
     find /root/scripts/net-blocking-tools/ -type f -iname "*.sh" -exec chmod +x {} \;
-    /root/scripts/net-blocking-tools/GeoIPSets/CreateIPSets.sh
     echo ""
     echo -e "${ColorVerde}Repo synced correctly.${FinColor}"
     echo ""
+    echo -e "${ColorVerde}Creating GeoIP sets....${FinColor}"
+    echo ""
+    /root/scripts/net-blocking-tools/GeoIPSets/CreateIPSets.sh
   else
     echo ""
     echo -e "${ColorRojo}The RepoSync coulden´t start because no internet connection was detected.${FinColor}"
