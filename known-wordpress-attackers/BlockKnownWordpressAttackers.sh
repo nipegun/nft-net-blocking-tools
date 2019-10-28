@@ -1,5 +1,13 @@
 #!/bin/bash
 
+ColorRed='\033[1;31m'
+ColorGreen='\033[1;32m'
+ColorEnd='\033[0m'
+
+echo ""
+echo -e "${ColorGreen}Blocking known wordpress attackers...${ColorEnd}"
+echo ""
+
 # Install NFTables, in case is not installed
 apt-get -y install nftables > /dev/null
 
