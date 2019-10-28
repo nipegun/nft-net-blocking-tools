@@ -26,7 +26,7 @@ wget -q --tries=10 --timeout=20 --spider https://github.com
     git clone --depth=1 https://github.com/nipegun/net-blocking-tools
     rm /root/scripts/net-blocking-tools/.git -R
     rm /root/scripts/net-blocking-tools/README.md
-    find /root/scripts/net-blocking-tools/  -type f -iname "*.sh" -exec chmod +x {} \;
+    find /root/scripts/net-blocking-tools/ -type f -iname "*.sh" -exec chmod +x {} \;
     echo ""
     echo -e "${ColorVerde}Repo synced correctly.${FinColor}"
     echo ""
