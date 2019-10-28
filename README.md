@@ -12,6 +12,6 @@ cd /root/scripts
 git clone --depth=1 https://github.com/nipegun/net-blocking-tools
 rm /root/scripts/net-blocking-tools/.git -R
 rm /root/scripts/net-blocking-tools/README.md
-chmod +x /root/scripts/net-blocking-tools/*.sh -R
+find /root/scripts/net-blocking-tools/ -type f -iname "*.sh" -exec chmod +x {} \;
 ```
 
