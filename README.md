@@ -2,7 +2,7 @@
 
 Tools to block some internet traffic
 
-## Instalation
+## Installation
 
 ```shell
 apt-get -y update
