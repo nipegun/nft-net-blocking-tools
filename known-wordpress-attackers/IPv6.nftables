@@ -1,2 +1,3 @@
 define KnownWordpressAttackers.ipv6 = {
+2001:600::/32,
 }
