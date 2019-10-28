@@ -15,6 +15,10 @@ while read IP
     sed -i '/^define KnownWordpressAttackers.ipv6 = {/a '"$IP"',' /root/scripts/net-blocking-tools/known-wordpress-attackers/IPv6.nftables
   done < /root/scripts/net-blocking-tools/known-wordpress-attackers/IPv6.list
 
+# Correct unknown error
+sed -i -e 's|istrwp||g' /root/scripts/net-blocking-tools/known-wordpress-attackers/IPv4.rules
+sed -i -e 's|istrwp||g' /root/scripts/net-blocking-tools/known-wordpress-attackers/IPv6.rules
+
 # Delete previous blocks, if exists
 /root/scripts/net-blocking-tools/known-wordpress-attackers/UnblockKnownWordpressAttackers.sh
 
