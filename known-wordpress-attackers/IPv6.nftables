@@ -1,0 +1,3 @@
+define wp-attackers.ipv6 = {
+2001:600::/32,
+}
