@@ -1,8 +1,6 @@
 include "/root/scripts/net-blocking-tools/known-wordpress-attackers/IPv4.nftables"
 include "/root/scripts/net-blocking-tools/known-wordpress-attackers/IPv6.nftables"
 
-#define CountriesToBlock = { CN, RU, UA, VN }
-
 table netdev filter {
 
   set known-wordpress-attackers-ipv4-blacklist {
