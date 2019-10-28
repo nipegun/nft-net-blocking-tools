@@ -32,8 +32,8 @@ wget -q --tries=10 --timeout=20 --spider https://github.com
     echo ""
     echo -e "${ColorVerde}Creating GeoIP sets....${FinColor}"
     echo ""
-    cd /root/scripts/net-blocking-tools/GeoIPSets/
-    /root/scripts/net-blocking-tools/GeoIPSets/CreateIPSets.sh
+    cd /root/scripts/net-blocking-tools/
+    /root/scripts/net-blocking-tools/geoipsets/CreateIPSets.sh
   else
     echo ""
     echo -e "${ColorRojo}The RepoSync coulden´t start because no internet connection was detected.${FinColor}"
