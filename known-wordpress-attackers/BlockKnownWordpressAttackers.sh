@@ -16,8 +16,8 @@ while read IP
   done < /root/scripts/net-blocking-tools/known-wordpress-attackers/IPv6.list
 
 # Correct unknown error
-sed -i -e 's|istrwp||g' /root/scripts/net-blocking-tools/known-wordpress-attackers/IPv4.rules
-sed -i -e 's|istrwp||g' /root/scripts/net-blocking-tools/known-wordpress-attackers/IPv6.rules
+sed -i -e 's|istrwp||g' /root/scripts/net-blocking-tools/known-wordpress-attackers/IPv4.nftables
+sed -i -e 's|istrwp||g' /root/scripts/net-blocking-tools/known-wordpress-attackers/IPv6.nftables
 
 # Delete previous blocks, if exists
 /root/scripts/net-blocking-tools/known-wordpress-attackers/UnblockKnownWordpressAttackers.sh
