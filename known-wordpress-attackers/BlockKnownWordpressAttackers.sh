@@ -13,7 +13,10 @@ while read IP
 while read IP
   do
     sed -i '/^define KnownWordpressAttackers.ipv6 = {/a '"$IP"',' /root/scripts/net-blocking-tools/known-wordpress-attackers/IPv6.nftables
-  done </root/scripts/net-blocking-tools/known-wordpress-attackers/IPv6.list
+  done < /root/scripts/net-blocking-tools/known-wordpress-attackers/IPv6.list
+
+# Delete previous blocks, if exists
+/root/scripts/net-blocking-tools/known-wordpress-attackers/UnblockKnownWordpressAttackers.sh
 
 # BackUp NFTables original configuration file
 cp /etc/nftables.conf /etc/nftables.conf.bak
