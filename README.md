@@ -1,6 +1,6 @@
 # net-blocking-tools
 
-Tools to block some internet traffic
+NFTables tools to block some internet traffic
 
 ## Installation
 
