@@ -1,5 +1,13 @@
 #!/bin/bash
 
+ColorRojo='\033[1;31m'
+ColorVerde='\033[1;32m'
+FinColor='\033[0m'
+
+echo ""
+echo -e "${ColorVerde}Creating GeoIP HAProxy sets....${FinColor}"
+echo ""
+
 #IPv4
 mkdir -p /root/scripts/net-blocking-tools/geoipsets/haproxyset/ipv4
 cp /root/scripts/net-blocking-tools/geoipsets/ipset/ipv4/* /root/scripts/net-blocking-tools/geoipsets/haproxyset/ipv4
