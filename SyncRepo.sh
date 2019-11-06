@@ -34,6 +34,7 @@ wget -q --tries=10 --timeout=20 --spider https://github.com
     echo ""
     cd /root/scripts/net-blocking-tools/
     /root/scripts/net-blocking-tools/geoipsets/CreateIPSets.sh
+    /root/scripts/net-blocking-tools/geoipsets/CreateIPSets-HAProxy.sh
   else
     echo ""
     echo -e "${ColorRojo}The RepoSync coulden´t start because no internet connection was detected.${FinColor}"
