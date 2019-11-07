@@ -11,15 +11,15 @@
 #  Script to Sync the net-blocking-tools
 #-----------------------------------------
 
-ColorRojo='\033[1;31m'
-ColorVerde='\033[1;32m'
-FinColor='\033[0m'
+ColorRed='\033[1;31m'
+ColorGreen='\033[1;32m'
+EndColor='\033[0m'
 
 # Check if there is internet connection before syncing the repo
 wget -q --tries=10 --timeout=20 --spider https://github.com
   if [[ $? -eq 0 ]]; then
     echo ""
-    echo -e "  ${ColorVerde}Syncing net-blocking-tools repo...${FinColor}" 
+    echo -e "  ${ColorGreen}Syncing net-blocking-tools repo...${EndColor}" 
     echo ""
     rm /root/scripts/net-blocking-tools -R
     cd /root/scripts
@@ -28,15 +28,19 @@ wget -q --tries=10 --timeout=20 --spider https://github.com
     rm /root/scripts/net-blocking-tools/README.md
     find /root/scripts/net-blocking-tools/ -type f -iname "*.sh" -exec chmod +x {} \;
     echo ""
-    echo -e "${ColorVerde}Repo synced correctly.${FinColor}"
+    echo -e "${ColorGreen}Repo synced correctly.${EndColor}"
     echo ""
-    echo -e "${ColorVerde}Creating GeoIP NFTables & IPTables sets....${FinColor}"
+    echo -e "${ColorGreen}Creating GeoIP NFTables & IPTables sets....${EndColor}"
     echo ""
     cd /root/scripts/net-blocking-tools/
     /root/scripts/net-blocking-tools/geoipsets/CreateIPSets.sh
     /root/scripts/net-blocking-tools/geoipsets/CreateIPSets-HAProxy.sh
+    echo ""
+    echo -e "${ColorGreen}Blocking TOR nodes...${ColorEnd}"
+    echo ""
+    /root/scripts/net-blocking-tools/tor/GetNodes.sh
   else
     echo ""
-    echo -e "${ColorRojo}The RepoSync coulden´t start because no internet connection was detected.${FinColor}"
+    echo -e "${ColorRed}The RepoSync coulden´t start because no internet connection was detected.${EndColor}"
     echo ""
 fi
