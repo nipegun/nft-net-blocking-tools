@@ -30,6 +30,7 @@ wget -q --tries=10 --timeout=20 --spider https://github.com
     echo ""
     echo -e "${ColorGreen}Repo synced correctly.${EndColor}"
     echo ""
+    echo ""
     echo -e "${ColorGreen}Creating GeoIP NFTables & IPTables sets....${EndColor}"
     echo ""
     cd /root/scripts/net-blocking-tools/
