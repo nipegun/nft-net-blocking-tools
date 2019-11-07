@@ -12,7 +12,7 @@ echo ""
 apt-get -y install nftables > /dev/null
 
 # Delete previous blocks, if exists
-/root/scripts/net-blocking-tools/non-spanish-speaking-countries/UnblockNonSpanishSpeakingCountries.sh
+/root/scripts/net-blocking-tools/non-spanish-speaking-countries/NFTables-Unblock.sh
 
 # BackUp NFTables original configuration file
 cp /etc/nftables.conf /etc/nftables.conf.bak
