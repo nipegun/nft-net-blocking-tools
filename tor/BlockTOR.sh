@@ -1,18 +1,7 @@
 #!/bin/bash
 
-ColorRed='\033[1;31m'
-ColorGreen='\033[1;32m'
-ColorEnd='\033[0m'
-
-echo ""
-echo -e "${ColorGreen}Blocking TOR nodes...${ColorEnd}"
-echo ""
-
 # Install NFTables, in case is not installed
 apt-get -y install nftables > /dev/null
-
-# Get Nodes
-/root/scripts/net-blocking-tools/tor/GetNodes.sh
 
 # Delete previous blocks, if exists
 /root/scripts/net-blocking-tools/tor/UnblockTOR.sh
