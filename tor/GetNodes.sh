@@ -1,5 +1,13 @@
 #!/bin/bash
 
+ColorRed='\033[1;31m'
+ColorGreen='\033[1;32m'
+EndColor='\033[0m'
+
+echo ""
+echo -e "${ColorGreen}Creating TOR HAProxy sets....${EndColor}"
+echo ""
+
 # Obtain WAN IP of the computer
 WANIP=$(curl --silent ipinfo.io/ip)
 
