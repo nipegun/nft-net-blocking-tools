@@ -11,15 +11,8 @@ echo ""
 # Install NFTables, in case is not installed
 apt-get -y install nftables > /dev/null
 
-# Obtain WAN IP of the computer
-WANIP=$(curl --silent ipinfo.io/ip)
-
-# Create the NFT sets
-wget -q https://check.torproject.org/cgi-bin/TorBulkExitList.py?ip=$WANIP -O -|sed '/^#/d' |while read IP
-  do
-    sed -i '/^define TORNodes.ipv4 = {/a '"$IP"',' /root/scripts/net-blocking-tools/tor/IPv4.nftables
-    sed -i '/^define TORNodes.ipv6 = {/a '"$IP"',' /root/scripts/net-blocking-tools/tor/IPv6.nftables
-  done
+# Get Nodes
+/root/scripts/net-blocking-tools/tor/GetNodes.sh
 
 # Delete previous blocks, if exists
 /root/scripts/net-blocking-tools/tor/UnblockTOR.sh
