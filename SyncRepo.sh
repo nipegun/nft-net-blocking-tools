@@ -36,9 +36,6 @@ wget -q --tries=10 --timeout=20 --spider https://github.com
     cd /root/scripts/net-blocking-tools/
     /root/scripts/net-blocking-tools/geoipsets/CreateIPSets.sh
     /root/scripts/net-blocking-tools/geoipsets/CreateIPSets-HAProxy.sh
-    echo ""
-    echo -e "${ColorGreen}Getting TOR nodes...${ColorEnd}"
-    echo ""
     /root/scripts/net-blocking-tools/tor/GetNodes.sh
   else
     echo ""
