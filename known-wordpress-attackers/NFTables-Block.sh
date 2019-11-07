@@ -28,7 +28,7 @@ sed -i -e 's|istrwp||g' /root/scripts/net-blocking-tools/known-wordpress-attacke
 sed -i -e 's|istrwp||g' /root/scripts/net-blocking-tools/known-wordpress-attackers/IPv6.nftables
 
 # Delete previous blocks, if exists
-/root/scripts/net-blocking-tools/known-wordpress-attackers/UnblockKnownWordpressAttackers.sh
+/root/scripts/net-blocking-tools/known-wordpress-attackers/NFTables-Unblock.sh
 
 # BackUp NFTables original configuration file
 cp /etc/nftables.conf /etc/nftables.conf.bak
