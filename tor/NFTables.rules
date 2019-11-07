@@ -1,5 +1,5 @@
-include "/root/scripts/net-blocking-tools/tor/IPv4.nftables"
-#include "/root/scripts/net-blocking-tools/tor/IPv6.nftables"
+include "/root/scripts/net-blocking-tools/tor/TORNodesIPv4.nftables"
+#include "/root/scripts/net-blocking-tools/tor/TORNodesIPv6.nftables"
 
 table netdev filter {
 
