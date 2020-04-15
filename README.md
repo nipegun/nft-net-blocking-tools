@@ -7,7 +7,7 @@ NFTables tools to block some internet traffic
 ```shell
 apt-get -y update > /dev/null
 apt-get -y install git ipset > /dev/null
-rm /root/scripts/nft-net-blocking-tools -R > /dev/null
+rm /root/scripts/nft-net-blocking-tools -R 2> /dev/null
 cd /root/scripts
 git clone --depth=1 https://github.com/nipegun/nft-net-blocking-tools
   rm /root/scripts/nft-net-blocking-tools/.git -R
