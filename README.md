@@ -1,4 +1,4 @@
-# net-blocking-tools
+# nft-net-blocking-tools
 
 NFTables tools to block some internet traffic
 
