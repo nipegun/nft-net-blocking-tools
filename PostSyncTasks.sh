@@ -16,7 +16,7 @@ cd /root/scripts/nft-net-blocking-tools/
    /root/scripts/nft-net-blocking-tools/geoipsets/CreateIPSets.sh -k fqkr86Z0eBqPoHQe
    /root/scripts/nft-net-blocking-tools/tor/GetNodes.sh
    /root/scripts/nft-net-blocking-tools/DeleteUselessFiles.sh
-
+   #find /root/scripts/nft-net-blocking-tools/geoipsets/nftset/ipv4/AD.ipv4
 echo ""
 echo -e "${ColorVerde}DONE!!${FinColor}"
 echo ""
