@@ -19,11 +19,11 @@ wget -q --tries=10 --timeout=20 --spider https://github.com
     echo ""
     echo -e "  ${ColorGreen}Syncing nft-net-blocking-tools repo...${EndColor}" 
     echo ""
-    rm /root/scripts/net-blocking-tools -R
+    rm /root/scripts/nft-net-blocking-tools -R
     cd /root/scripts
-    git clone --depth=1 https://github.com/nipegun/net-blocking-tools
-    rm /root/scripts/nft-net-blocking-tools/.git -R
-    rm /root/scripts/nft-net-blocking-tools/README.md
+    git clone --depth=1 https://github.com/nipegun/nft-net-blocking-tools
+      rm /root/scripts/nft-net-blocking-tools/.git -R
+      rm /root/scripts/nft-net-blocking-tools/README.md
     find /root/scripts/nft-net-blocking-tools/ -type f -iname "*.sh" -exec chmod +x {} \;
     echo ""
     echo -e "${ColorGreen}Repo synced correctly.${EndColor}"
@@ -32,9 +32,9 @@ wget -q --tries=10 --timeout=20 --spider https://github.com
     echo -e "${ColorGreen}Getting GeoIP NFTables & IPTables sets....${EndColor}"
     echo ""
     cd /root/scripts/nft-net-blocking-tools/
-    /root/scripts/nft-net-blocking-tools/geoipsets/CreateIPSets.sh
-    /root/scripts/nft-net-blocking-tools/geoipsets/CreateIPSets-HAProxy.sh
-    /root/scripts/nft-net-blocking-tools/tor/GetNodes.sh
+       /root/scripts/nft-net-blocking-tools/geoipsets/CreateIPSets.sh
+       /root/scripts/nft-net-blocking-tools/geoipsets/CreateIPSets-HAProxy.sh
+       /root/scripts/nft-net-blocking-tools/tor/GetNodes.sh
   else
     echo ""
     echo -e "${ColorRed}The RepoSync coulden´t start because no internet connection was detected.${EndColor}"
