@@ -19,7 +19,7 @@ cd /root/scripts/nft-net-blocking-tools/
    # Rename all .ipv4 files to .nftables files
    for x in /root/scripts/nft-net-blocking-tools/geoipsets/nftset/ipv4/*.ipv4; do mv "$x" "${x%.ipv4}-ipv4.nftables"; done
    # Rename all .ipv6 files to .nftables file
-   for x in /root/scripts/nft-net-blocking-tools/geoipsets/nftset/ipv4/*.ipv6; do mv "$x" "${x%.ipv6}-ipv6.nftables"; done
+   for x in /root/scripts/nft-net-blocking-tools/geoipsets/nftset/ipv6/*.ipv6; do mv "$x" "${x%.ipv6}-ipv6.nftables"; done
 echo ""
 echo -e "${ColorVerde}DONE!!${FinColor}"
 echo ""
