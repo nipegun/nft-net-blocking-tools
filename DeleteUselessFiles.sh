@@ -15,4 +15,6 @@ echo ""
 
 # Remove the HAProxy and NFTables sets
 rm /root/scripts/nft-net-blocking-tools/geoipsets/ipset -R 2> /dev/null
+rm /root/scripts/nft-net-blocking-tools/geoipsets/nftset/ipv4/.ipv6
+rm /root/scripts/nft-net-blocking-tools/geoipsets/nftset/ipv6/.ipv6
 
