@@ -5,9 +5,9 @@
 # Si se te llena la boca hablando de libertad entonces hazlo realmente libre.
 # No tienes que aceptar ningún tipo de términos de uso o licencia para utilizarlo o modificarlo porque va sin CopyLeft.
 
-#---------------------------------------------
-#  Script to Sync the nft-net-blocking-tools
-#---------------------------------------------
+#--------------------------------------------------
+#  Script to Sync the nft-net-blocking-tools repo
+#--------------------------------------------------
 
 ColorRed='\033[1;31m'
 ColorGreen='\033[1;32m'
