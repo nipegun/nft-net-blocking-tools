@@ -1,5 +1,5 @@
-include "/root/nft-scripts/net-blocking-tools/tor/TORNodesIPv4.nftables"
-#include "/root/nft-scripts/net-blocking-tools/tor/TORNodesIPv6.nftables"
+include "/root/nft-scripts/nft-net-blocking-tools/tor/TORNodesIPv4.nftables"
+#include "/root/nft-scripts/nft-net-blocking-tools/tor/TORNodesIPv6.nftables"
 
 table netdev filter {
 
