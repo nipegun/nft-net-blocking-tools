@@ -19,11 +19,11 @@ wget -q --tries=10 --timeout=20 --spider https://github.com
     echo ""
     echo -e "  ${ColorGreen}Syncing nft-net-blocking-tools repo...${EndColor}" 
     echo ""
-    rm /root/scripts/nft-net-blocking-tools -R
+    rm /root/scripts/nft-net-blocking-tools -R 2> /dev/null
     cd /root/scripts
     git clone --depth=1 https://github.com/nipegun/nft-net-blocking-tools
-      rm /root/scripts/nft-net-blocking-tools/.git -R
-      rm /root/scripts/nft-net-blocking-tools/README.md
+      rm /root/scripts/nft-net-blocking-tools/.git -R 2> /dev/null
+      rm /root/scripts/nft-net-blocking-tools/README.md 2> /dev/null
     find /root/scripts/nft-net-blocking-tools/ -type f -iname "*.sh" -exec chmod +x {} \;
     echo ""
     echo -e "${ColorGreen}Repo synced correctly.${EndColor}"
