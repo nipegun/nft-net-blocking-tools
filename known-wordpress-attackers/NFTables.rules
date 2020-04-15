@@ -1,5 +1,5 @@
-include "/root/scripts/net-blocking-tools/known-wordpress-attackers/IPv4.nftables"
-include "/root/scripts/net-blocking-tools/known-wordpress-attackers/IPv6.nftables"
+include "/root/scripts/nft-net-blocking-tools/known-wordpress-attackers/IPv4.nftables"
+include "/root/scripts/nft-net-blocking-tools/known-wordpress-attackers/IPv6.nftables"
 
 table netdev filter {
 
