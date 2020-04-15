@@ -28,13 +28,7 @@ wget -q --tries=10 --timeout=20 --spider https://github.com
     echo ""
     echo -e "${ColorGreen}Repo synced correctly.${EndColor}"
     echo ""
-    echo ""
-    echo -e "${ColorGreen}Getting GeoIP NFTables & IPTables sets....${EndColor}"
-    echo ""
-    cd /root/scripts/nft-net-blocking-tools/
-       /root/scripts/nft-net-blocking-tools/geoipsets/CreateIPSets.sh -k fqkr86Z0eBqPoHQe
-       /root/scripts/nft-net-blocking-tools/geoipsets/CreateIPSets-HAProxy.sh
-       /root/scripts/nft-net-blocking-tools/tor/GetNodes.sh
+    /root/scripts/nft-net-blocking-tools/PostSyncTasks.sh
   else
     echo ""
     echo -e "${ColorRed}The RepoSync coulden´t start because no internet connection was detected.${EndColor}"
