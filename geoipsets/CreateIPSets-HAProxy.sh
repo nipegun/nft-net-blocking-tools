@@ -15,12 +15,12 @@ echo ""
 
 #IPv4
 mkdir -p /root/scripts/nft-net-blocking-tools/geoipsets/haproxyset/ipv4
-cp /root/scripts/nft-net-blocking-tools/geoipsets/ipset/ipv4/* /root/scripts/nft-net-blocking-tools/geoipsets/haproxyset/ipv4
-find /root/scripts/nft-net-blocking-tools/geoipsets/haproxyset/ipv4/ -name "*.ipv4" -exec bash -c 'mv "$1" "${1%.ipv4}".haproxy' - '{}' \;
-find /root/scripts/nft-net-blocking-tools/geoipsets/haproxyset/ipv4/ -name "*.haproxy" -exec sed -i '1d' {} \;
-find /root/scripts/nft-net-blocking-tools/geoipsets/haproxyset/ipv4/ -name "*.haproxy" -exec sed -i 's/^............//' {} \;
-find /root/scripts/nft-net-blocking-tools/geoipsets/haproxyset/ipv4/ -name "*.haproxy" -exec sed -i 's/...........$//' {} \;
-find /root/scripts/nft-net-blocking-tools/geoipsets/haproxyset/ipv4/ -name "*.haproxy" -exec sed -i 's| comment | |g' {} \;
+      cp /root/scripts/nft-net-blocking-tools/geoipsets/ipset/ipv4/* /root/scripts/nft-net-blocking-tools/geoipsets/haproxyset/ipv4
+    find /root/scripts/nft-net-blocking-tools/geoipsets/haproxyset/ipv4/ -name "*.ipv4" -exec bash -c 'mv "$1" "${1%.ipv4}".haproxy' - '{}' \;
+    find /root/scripts/nft-net-blocking-tools/geoipsets/haproxyset/ipv4/ -name "*.haproxy" -exec sed -i '1d' {} \;
+    find /root/scripts/nft-net-blocking-tools/geoipsets/haproxyset/ipv4/ -name "*.haproxy" -exec sed -i 's/^............//' {} \;
+    find /root/scripts/nft-net-blocking-tools/geoipsets/haproxyset/ipv4/ -name "*.haproxy" -exec sed -i 's/...........$//' {} \;
+    find /root/scripts/nft-net-blocking-tools/geoipsets/haproxyset/ipv4/ -name "*.haproxy" -exec sed -i 's| comment | |g' {} \;
 
 # IPv6
 mkdir -p /root/scripts/nft-net-blocking-tools/geoipsets/haproxyset/ipv6
