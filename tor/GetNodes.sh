@@ -17,7 +17,7 @@ WANIP=$(curl --silent ipinfo.io/ip)
 truncate -s 0 /root/scripts/hap-net-blocking-tools/tor/TORNodesIPv4.nftables
 truncate -s 0 /root/scripts/hap-net-blocking-tools/tor/TORNodesIPv6.nftables
 # Create the NFTables sets
-wget -q https://check.torproject.org/cgi-bin/TorBulkExitList.py?ip=$WANIP -O -|sed '/^#/d' |while read IP
+wget -q https://check.torproject.org/cgi-bin/TorBulkExitList.py?ip=$WANIP -O - | sed '/^#/d' | while read IP
   do
     #sed -i '/^define TORNodes.ipv4 = {/a '"$IP"',' /root/scripts/nft-net-blocking-tools/tor/TORNodesIPv4.nftables
     #sed -i '/^define TORNodes.ipv6 = {/a '"$IP"',' /root/scripts/nft-net-blocking-tools/tor/TORNodesIPv6.nftables
