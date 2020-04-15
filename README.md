@@ -10,8 +10,8 @@ apt-get -y install git ipset > /dev/null
 rm /root/scripts/nft-net-blocking-tools -R 2> /dev/null
 cd /root/scripts
 git clone --depth=1 https://github.com/nipegun/nft-net-blocking-tools
-  rm /root/scripts/nft-net-blocking-tools/.git -R
-  rm /root/scripts/nft-net-blocking-tools/README.md
+  rm /root/scripts/nft-net-blocking-tools/.git -R 2> /dev/null
+  rm /root/scripts/nft-net-blocking-tools/README.md 2> /dev/null
 find /root/scripts/nft-net-blocking-tools/ -type f -iname "*.sh" -exec chmod +x {} \;
 ```
 ## Tools
