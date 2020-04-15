@@ -17,3 +17,6 @@ cd /root/scripts/nft-net-blocking-tools/
    /root/scripts/nft-net-blocking-tools/tor/GetNodes.sh
    /root/scripts/nft-net-blocking-tools/DeleteUselessFiles.sh
 
+echo ""
+echo -e "${ColorVerde}DONE!!${FinColor}"
+echo ""
