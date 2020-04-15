@@ -10,7 +10,7 @@ ColorGreen='\033[1;32m'
 EndColor='\033[0m'
 
 echo ""
-echo -e "${ColorGreen}Getting TOR Nodes....${EndColor}"
+echo -e "${ColorGreen}  - Getting TOR Nodes....${EndColor}"
 echo ""
 # Obtain WAN IP of the computer
 WANIP=$(curl --silent ipinfo.io/ip)
