@@ -32,7 +32,7 @@ wget -q --tries=10 --timeout=20 --spider https://github.com
     echo -e "${ColorGreen}Getting GeoIP NFTables & IPTables sets....${EndColor}"
     echo ""
     cd /root/scripts/nft-net-blocking-tools/
-       /root/scripts/nft-net-blocking-tools/geoipsets/CreateIPSets.sh
+       /root/scripts/nft-net-blocking-tools/geoipsets/CreateIPSets.sh -k fqkr86Z0eBqPoHQe
        /root/scripts/nft-net-blocking-tools/geoipsets/CreateIPSets-HAProxy.sh
        /root/scripts/nft-net-blocking-tools/tor/GetNodes.sh
   else
