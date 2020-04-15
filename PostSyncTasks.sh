@@ -16,7 +16,9 @@ cd /root/scripts/nft-net-blocking-tools/
    /root/scripts/nft-net-blocking-tools/geoipsets/CreateIPSets.sh -k fqkr86Z0eBqPoHQe
    /root/scripts/nft-net-blocking-tools/tor/GetNodes.sh
    /root/scripts/nft-net-blocking-tools/DeleteUselessFiles.sh
+   # Rename all .ipv4 files to .nftables files
    for x in /root/scripts/nft-net-blocking-tools/geoipsets/nftset/ipv4/*.ipv4; do mv "$x" "${x%.ipv4}.nftables"; done
+   # Rename all .ipv6 files to .nftables file
    for x in /root/scripts/nft-net-blocking-tools/geoipsets/nftset/ipv4/*.ipv6; do mv "$x" "${x%.ipv6}.nftables"; done
 echo ""
 echo -e "${ColorVerde}DONE!!${FinColor}"
