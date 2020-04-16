@@ -6,3 +6,4 @@
 # No tienes que aceptar ningún tipo de términos de uso o licencia para utilizarlo o modificarlo porque va sin CopyLeft.
 
 sed -i -e 's|include "/root/scripts/nft-net-blocking-tools/non-spanish-speaking-countries/NFTables.rules"||g' /etc/nftables.conf
+
