@@ -258,6 +258,7 @@ include "/root/scripts/nft-net-blocking-tools/geoipsets/nftset/ipv6/BT-ipv6.nfta
 include "/root/scripts/nft-net-blocking-tools/geoipsets/nftset/ipv6/BV-ipv6.nftables"
 include "/root/scripts/nft-net-blocking-tools/geoipsets/nftset/ipv6/BW-ipv6.nftables"
 include "/root/scripts/nft-net-blocking-tools/geoipsets/nftset/ipv6/BY-ipv6.nftables"
+include "/root/scripts/nft-net-blocking-tools/geoipsets/nftset/ipv6/CA-ipv6.nftables"
 #include "/root/scripts/nft-net-blocking-tools/geoipsets/nftset/ipv6/CC-ipv6.nftables"
 include "/root/scripts/nft-net-blocking-tools/geoipsets/nftset/ipv6/CD-ipv6.nftables"
 include "/root/scripts/nft-net-blocking-tools/geoipsets/nftset/ipv6/CF-ipv6.nftables"
