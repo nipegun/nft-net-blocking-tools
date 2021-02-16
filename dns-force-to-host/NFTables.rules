@@ -1,21 +1,13 @@
-table netdev filter {
+table NAT {
 
-  set known-wordpress-attackers-ipv4 {
-    type ipv4_addr
-    flags interval
-    elements = { $KnownWordpressAttackers.ipv4 }
-  }
-
-  set known-wordpress-attackers-ipv6 {
-    type ipv6_addr
-    flags interval
-    elements = { $KnownWordpressAttackers.ipv6 }
-  }
-  
-  chain ingress {
-    type filter hook ingress device eth0 priority 0; policy accept;
-     ip saddr @known-wordpress-attackers-ipv4 counter drop
-    ip6 saddr @known-wordpress-attackers-ipv6 counter drop
+  chain prerouting {
+    type nat hook prerouting priority 0
+    tcp dport   53 ip saddr 192.168.1.0/24 dnat 192.168.1.1:53
+    udp dport   53 ip saddr 192.168.1.0/24 dnat 192.168.1.1:53
+    tcp dport  853 ip saddr 192.168.1.0/24 dnat 192.168.1.1:853
+    udp dport  853 ip saddr 192.168.1.0/24 dnat 192.168.1.1:853
+    tcp dport 5353 ip saddr 192.168.1.0/24 dnat 192.168.1.1:5353
+    udp dport 5353 ip saddr 192.168.1.0/24 dnat 192.168.1.1:5353
   }
 
 }
