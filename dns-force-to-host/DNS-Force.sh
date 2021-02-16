@@ -10,15 +10,14 @@ ColorGreen='\033[1;32m'
 ColorEnd='\033[0m'
 
 echo ""
-echo -e "${ColorGreen}Redirecting DNS queries to host...${ColorEnd}"
+echo -e "${ColorGreen}Redirecting DNS ports to host...${ColorEnd}"
 echo ""
 
 # Install NFTables, in case is not installed
 apt-get -y install nftables > /dev/null
 
-
 # Delete previous blocks, if exists
-/root/scripts/nft-net-blocking-tools/known-wordpress-attackers/NFTables-Unblock.sh
+/root/scripts/nft-net-blocking-tools/dns-force-to-host/DNS-Unforce.sh
 
 # BackUp NFTables original configuration file
 cp /etc/nftables.conf /etc/nftables.conf.bak
@@ -29,3 +28,4 @@ sed -i -e 's|flush ruleset|flush ruleset\n|g' /etc/nftables.conf
 
 # Reload NFTables rules
 nft --file /etc/nftables.conf
+
