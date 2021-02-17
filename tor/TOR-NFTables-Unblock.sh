@@ -8,3 +8,6 @@
 
 sed -i -e 's|include "/root/scripts/nft-net-blocking-tools/tor/NFTables.rules"||g' /etc/nftables.conf
 
+# Reload NFTables rules
+nft --file /etc/nftables.conf
+
