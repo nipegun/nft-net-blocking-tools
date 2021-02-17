@@ -7,3 +7,6 @@
 
 sed -i -e 's|include "/root/scripts/nft-net-blocking-tools/known-wordpress-attackers/NFTables.rules"||g' /etc/nftables.conf
 
+# Reload NFTables rules
+nft --file /etc/nftables.conf
+
