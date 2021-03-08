@@ -13,6 +13,15 @@ ColorRed='\033[1;31m'
 ColorGreen='\033[1;32m'
 EndColor='\033[0m'
 
+# Comprobar si el paquete wget está instalado. Si no lo está, instalarlo.
+if [[ $(dpkg-query -s wget 2>/dev/null | grep installed) == "" ]]; then
+    echo ""
+    echo "wget no está instalado. Iniciando su instalación..."
+    echo ""
+    apt-get -y update
+    apt-get -y install wget
+fi
+
 # Check if there is internet connection before syncing the repo
 wget -q --tries=10 --timeout=20 --spider https://github.com
   if [[ $? -eq 0 ]]; then
