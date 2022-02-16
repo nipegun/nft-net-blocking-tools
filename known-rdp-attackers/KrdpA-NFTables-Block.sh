@@ -33,7 +33,7 @@ sed -i -e 's|istrwp||g' /root/scripts/nft-net-blocking-tools/known-rdp-attackers
 sed -i -e 's|istrwp||g' /root/scripts/nft-net-blocking-tools/known-rdp-attackers/IPv6.nftables
 
 # Delete previous blocks, if exists
-/root/scripts/nft-net-blocking-tools/known-rdp-attackers/NFTables-Unblock.sh
+/root/scripts/nft-net-blocking-tools/known-rdp-attackers/KrdpA-NFTables-Unblock.sh
 
 # BackUp NFTables original configuration file
 cp /etc/nftables.conf /etc/nftables.conf.bak
