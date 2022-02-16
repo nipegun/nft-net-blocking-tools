@@ -5,9 +5,12 @@
 # Si se te llena la boca hablando de libertad entonces hazlo realmente libre.
 # No tienes que aceptar ningún tipo de términos de uso o licencia para utilizarlo o modificarlo porque va sin CopyLeft.
 
-#--------------------------------------------------
+#------------------------------------------------------------------------------------------------------
 #  Script to Sync the nft-net-blocking-tools repo
-#--------------------------------------------------
+#
+#  Ejecución remota:
+#  curl -s https://raw.githubusercontent.com/nipegun/nft-net-blocking-tools/master/SyncRepo.sh | bash
+#------------------------------------------------------------------------------------------------------
 
 ColorRed='\033[1;31m'
 ColorGreen='\033[1;32m'
@@ -43,3 +46,4 @@ wget -q --tries=10 --timeout=20 --spider https://github.com
     echo -e "${ColorRed}The RepoSync coulden´t start because no internet connection was detected.${EndColor}"
     echo ""
 fi
+
