@@ -16,17 +16,17 @@ ColorRed='\033[1;31m'
 ColorGreen='\033[1;32m'
 EndColor='\033[0m'
 
-# Comprobar si el paquete wget está instalado. Si no lo está, instalarlo.
-if [[ $(dpkg-query -s wget 2>/dev/null | grep installed) == "" ]]; then
+# Check if wget is installed. If not, install it.
+  if [[ $(dpkg-query -s wget 2>/dev/null | grep installed) == "" ]]; then
     echo ""
-    echo "wget no está instalado. Iniciando su instalación..."
+    echo "wget is not installed. Installing it..."
     echo ""
     apt-get -y update
     apt-get -y install wget
-fi
+  fi
 
 # Check if there is internet connection before syncing the repo
-wget -q --tries=10 --timeout=20 --spider https://github.com
+  wget -q --tries=10 --timeout=20 --spider https://github.com
   if [[ $? -eq 0 ]]; then
     echo ""
     echo -e "  ${ColorGreen}Syncing nft-net-blocking-tools repo...${EndColor}" 
@@ -45,5 +45,5 @@ wget -q --tries=10 --timeout=20 --spider https://github.com
     echo ""
     echo -e "${ColorRed}The RepoSync coulden´t start because no internet connection was detected.${EndColor}"
     echo ""
-fi
+  fi
 
