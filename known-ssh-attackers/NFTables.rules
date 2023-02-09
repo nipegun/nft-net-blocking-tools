@@ -1,0 +1,24 @@
+include "/root/scripts/nft-net-blocking-tools/known-ssh-attackers/IPv4.nftables"
+include "/root/scripts/nft-net-blocking-tools/known-ssh-attackers/IPv6.nftables"
+
+table netdev filter {
+
+  set known-ssh-attackers-ipv4 {
+    type ipv4_addr
+    flags interval
+    elements = { $KnownSSHAttackers.ipv4 }
+  }
+
+  set known-ssh-attackers-ipv6 {
+    type ipv6_addr
+    flags interval
+    elements = { $KnownSSHAttackers.ipv6 }
+  }
+  
+  chain ingress {
+    type filter hook ingress device eth0 priority 0; policy accept;
+     ip saddr @known-ssh-attackers-ipv4 counter drop
+    ip6 saddr @known-shh-attackers-ipv6 counter drop
+  }
+
+}
